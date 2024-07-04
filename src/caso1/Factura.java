@@ -18,41 +18,41 @@ public class Factura {
     private String cedulaCliente;
     private int codigoFactura;
     private double montoFactura;
-    private int productosElectricos;
-    private int productosAutomotrices;
-    private int productosConstruccion;
+    private int prodElectricos;
+    private int prodAutomotrices;
+    private int prodConstruccion;
 
     // se crea el constructor 
     public Factura(String nombreCliente, String cedulaCliente, int codigoFactura, double montoFactura,
-            int productosElectricos, int productosAutomotrices, int productosConstruccion) {
+            int prodElectricos, int prodAutomotrices, int prodConstruccion) {
         this.nombreCliente = nombreCliente;
         this.cedulaCliente = cedulaCliente;
         this.codigoFactura = codigoFactura;
         this.montoFactura = montoFactura;
-        this.productosElectricos = productosElectricos;
-        this.productosAutomotrices = productosAutomotrices;
-        this.productosConstruccion = productosConstruccion;
+        this.prodElectricos = prodElectricos;
+        this.prodAutomotrices = prodAutomotrices;
+        this.prodConstruccion = prodConstruccion;
     }
 
     //se calcula el bono
     public double calcularBono() {
         double bono = 0;
-        if (productosElectricos > 0 && productosAutomotrices > 0 && productosConstruccion > 0) {
+        if (prodElectricos > 0 && prodAutomotrices > 0 && prodConstruccion > 0) {
             bono = montoFactura * .010;
             if (montoFactura > 50000) {
                 bono = 0;
             }
         } else {
-            if (productosElectricos > 0) {
+            if (prodElectricos > 0) {
                 bono += montoFactura * 0.02;
-                if (productosElectricos > 3) {
+                if (prodElectricos > 3) {
                     bono += montoFactura * 0.02;
                 }
             }
-            if (productosAutomotrices > 0) {
-                bono += productosAutomotrices > 4 ? montoFactura * 0.04 : montoFactura * 0.02;
+            if (prodAutomotrices > 0) {
+                bono += prodAutomotrices > 4 ? montoFactura * 0.04 : montoFactura * 0.02;
             }
-            if (productosConstruccion > 0) {
+            if (prodConstruccion > 0) {
                 bono += montoFactura * 0.08;
             }
         }
@@ -67,16 +67,16 @@ public class Factura {
     //se calculan los puntos que obtuvo el vendedor 
     public int calcularPuntos() {
         int puntos = 0;
-        if (productosElectricos > 0 && productosAutomotrices > 0 && productosConstruccion > 0) {
+        if (prodElectricos > 0 && prodAutomotrices > 0 && prodConstruccion > 0) {
             puntos += 3;
         }
-        if (productosElectricos > 0) {
+        if (prodElectricos > 0) {
             puntos += 1;
         }
-        if (productosAutomotrices > 4) {
+        if (prodAutomotrices > 4) {
             puntos += 1;
         }
-        if (productosConstruccion > 0) {
+        if (prodConstruccion > 0) {
             puntos += 2;
         }
         return puntos;
@@ -111,28 +111,28 @@ public class Factura {
         this.codigoFactura = codigoFactura;
     }
 
-    public int getProductosElectricos() {
-        return productosElectricos;
+    public int getProdElectricos() {
+        return prodElectricos;
     }
 
-    public void setProductosElectricos(int productosElectricos) {
-        this.productosElectricos = productosElectricos;
+    public void setProdElectricos(int prodElectricos) {
+        this.prodElectricos = prodElectricos;
     }
 
-    public int getProductosAutomotrices() {
-        return productosAutomotrices;
+    public int getProdAutomotrices() {
+        return prodAutomotrices;
     }
 
-    public void setProductosAutomotrices(int productosAutomotrices) {
-        this.productosAutomotrices = productosAutomotrices;
+    public void setProdAutomotrices(int prodAutomotrices) {
+        this.prodAutomotrices = prodAutomotrices;
     }
 
-    public int getProductosConstruccion() {
-        return productosConstruccion;
+    public int getProdConstruccion() {
+        return prodConstruccion;
     }
 
-    public void setProductosConstruccion(int productosConstruccion) {
-        this.productosConstruccion = productosConstruccion;
+    public void setProdConstruccion(int prodConstruccion) {
+        this.prodConstruccion = prodConstruccion;
     }
 
 }
