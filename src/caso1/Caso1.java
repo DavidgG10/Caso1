@@ -19,7 +19,7 @@ public class Caso1 {
         String nombreVendedor = JOptionPane.showInputDialog("Ingrese el nombre del vendedor:");
         String codigoVendedor = JOptionPane.showInputDialog("Ingrese el código del vendedor:");
         String mes = JOptionPane.showInputDialog("Ingrese el mes:");
-        String carro = JOptionPane.showInputDialog("Cuenta con carro?:");
+        String carro = JOptionPane.showInputDialog("Cuenta con vehiculo personal?:");
 
         //se llama la clase vendedor 
         Vendedor vendedor = new Vendedor(nombreVendedor, codigoVendedor, mes, carro);
